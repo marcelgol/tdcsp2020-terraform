@@ -17,3 +17,13 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/tf'
+    backendServiceArm: 'Visual Studio Professional(94211381-cbc5-4473-b790-de89414c0bfc)'
+    backendAzureRmResourceGroupName: 'tdcsp2020-general'
+    backendAzureRmStorageAccountName: 'tdcsp2020storage'
+    backendAzureRmContainerName: 'terraform'
+    backendAzureRmKey: 'NX/Cvup9d1uKJBdec8Me1JDHcu2wZaFO3LCF4FwJAT69hfmZShSoqIiWGHlBk2P74qVGNvxwLJWm+kqC76zrYQ=='
